@@ -1,0 +1,31 @@
+spring:
+  server:
+    port: 8080
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: testDB
+    password: testDB
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    com.tutorial: debug
+
+# base64 'spring-boot-project-jieon-library-board-security-jwt-secretkey'
+jwt:
+  secret: c3ByaW5nLWJvb3QtcHJvamVjdC1qaWVvbi1saWJyYXJ5LWJvYXJkLXNlY3VyaXR5LWp3dC1zZWNyZXRrZXk=
+  expirationMin: 30
